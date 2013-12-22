@@ -14,14 +14,8 @@ Run
 
 * Clone the repository
 * Navigate to the root of the project
-* Install dependencies
-``` script
-bundle
-```
-* Bring up the server
-``` script
-bundle exec rackup
-```
+* Install dependencies ``` bundle ```
+* Bring up the server ``` bundle exec rackup ```
 
 License
 -------
