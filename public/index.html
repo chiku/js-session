@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <meta name="author" content="Chirantan Mitra" />
+  <meta name="company" content="ThoughtWorks" />
+
+  <title>JavaScript Session</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/hash/deck.hash.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/fade.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1>JavaScript Session</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Requirements</h1>
+      <h3>Recent version</h3>
+      <ul>
+        <li>Firefox + firebug</li>
+        <li>Google chrome / chromium</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>References</h2>
+      <ol>
+          <li>Douglas Crockford - JavaScript The Good Parts</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Basic objects</h2>
+      <ol>
+        <li>Number</li>
+        <li>String</li>
+        <li>Boolean</li>
+        <li>Undefined</li>
+        <li>Function</li>
+        <li>Object</li>
+      </ol>
+      <h3>Value type vs Refefence type</h3>
+    </section>
+
+    <section class="slide">
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof 1);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof 1.0);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof "a");</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof undefined);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof {});</textarea></div>
+    </section>
+
+    <section class="slide">
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof alert);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof window);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof null);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof [1, 2, 3]);</textarea></div>
+      <div><textarea class="code" mode="javascript" runnable="true">console.log(typeof new Date(2014, 0, 1));</textarea></div>
+    </section>
+
+    <section class="slide">
+      <h2>Object access</h2>
+      <div>
+        <textarea class="code" mode="javascript">
+          var person = {
+            name: "Sabu",
+            age: 40
+          };
+        </textarea>
+      </div>
+      <li>
+        Dot notation<div><textarea class="code" mode="javascript">person.name;</textarea></div>
+      </li>
+      <li>
+        Square notation<div><textarea class="code" mode="javascript">person["name"]</textarea></div>
+      </li>
+    </section>
+
+    <section class="slide">
+      <h2>Numbers</h2>
+      <li>All numbers are double precision numbers</li>
+      <li>Integers are accurate when inside 10^53</li>
+      <li>Special numbers</li>
+      <ul>
+        <li>NaN</li>
+        <li>+Infinity</li>
+        <li>-Infinity</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Auto-boxing</h2>
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var x = 1.2;
+          console.log(x.toString());
+        </textarea>
+      </div>
+
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var x = (1.2).toString();
+          console.log(x);
+        </textarea>
+      </div>
+
+      <h3>However</h3>
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var x = 1.2;
+          x.foo = "bar"
+          console.log(x.foo);
+        </textarea>
+      </div>      
+    </section>
+
+    <section class="slide">
+      <h2>Enumeration - Array</h2>
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var array = [10, 20, 30, 40, 50];
+          var i, sum = 0;
+          for (i = 0; i < array.length; i += 1) {
+              sum += array[i];
+          }
+          console.log(sum);
+        </textarea>
+      </div>
+
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var array = [10, 20, 30, 40, 50];
+          var element, sum = 0;
+          for (key in array) {
+              if (array.hasOwnProperty(key)) {
+                  sum += array[key];
+              }
+          }
+          console.log(sum);
+        </textarea>
+      </div>
+
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var array = [10, 20, 30, 40, 50];
+          // cache array.length - Useful if array is a DOM collection
+          var len = array.length, i, sum = 0;
+          for (i = 0; i < len; i += 1) {
+              sum += array[i];
+          }
+          console.log(sum);
+        </textarea>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Typing</h2>
+      <h3>Dynamic</h3>
+      <h3>Weakly</h3>
+    </section>
+
+    <section class="slide">
+      <h2>Scoping</h2>
+      <h3>Types</h3>
+      <ol>
+        <li>Lexical</li>
+        <li>Dynamic</li>
+        <li>Unscoped</li>
+      </ol>
+      <h3>Function scope vs block scope</h3>
+    </section>
+
+    <section class="slide">
+      <h2>Reduce global scope pollution</h2>
+      <h3>These create global scopes</h3>
+      <ul>
+        <li class="slide">
+          var at top/global level
+          <div><textarea class="code" mode="javascript">var a = 10;</textarea></div>
+        </li>
+        <li class="slide">
+          Implicit decleration
+          <div><textarea class="code" mode="javascript">b = 10;</textarea></div>
+        </li>
+        <li class="slide">
+          Attach property to global object
+          <div><textarea class="code" mode="javascript">window.c = 30;</textarea></div>
+        </li>
+        <li class="slide">Attaching properties to Object.prototype
+          <div>
+            <textarea class="code" mode="javascript" runnable="true">
+              Object.prototype.foo = 100;
+              Object.prototype.bar = function() {
+                console.log(foo);
+              };
+              bar();
+            </textarea>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h1>Continued</h1>
+    </section>
+
+    <section class="slide">
+      <h1>* * * * * * * * * * * * * * *</h1>
+    </section>
+
+    <!-- End slides. -->
+
+  <!-- Begin extension snippets. Add or remove as needed. -->
+    <!-- deck.navigation snippet -->
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- deck.hash snippet -->
+    <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+    <!-- End extension snippets. -->
+  </div>
+
+  <!-- Required JS files. -->
+  <script src="jquery.min.js"></script>
+  <script src="core/deck.core.js"></script>
+
+  <!-- Extension JS files. Add or remove as needed. -->
+  <script src="core/deck.core.js"></script>
+  <script src="extensions/hash/deck.hash.js"></script>
+  <script src="extensions/menu/deck.menu.js"></script>
+  <script src="extensions/goto/deck.goto.js"></script>
+  <script src="extensions/status/deck.status.js"></script>
+  <script src="extensions/navigation/deck.navigation.js"></script>
+  <script src="extensions/scale/deck.scale.js"></script>
+
+  <!-- Base codemiror code -->
+  <script src="extensions/codemirror/codemirror.js"></script>
+
+  <!-- Syntax highlighting Modes -->
+
+  <!-- javascript -->
+  <script src="extensions/codemirror/mode/javascript/javascript.js"></script>
+
+  <!-- html mode (note html mode requires xml, css and javascript) -->
+  <script src="extensions/codemirror/mode/xml/xml.js"></script>
+  <script src="extensions/codemirror/mode/css/css.js"></script>
+  <script src="extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+  <!-- Plugin code -->
+  <script src="extensions/codemirror/deck.codemirror.js"></script>
+
+  <!-- Initialize the deck. You can put this in an external file if desired. -->
+  <script>
+    $(function() {
+      $.deck('.slide');
+    });
+  </script>
+</body>
+</html>
