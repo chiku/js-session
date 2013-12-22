@@ -8,6 +8,7 @@ Dependencies
 
 * ruby
 * rack
+* unicorn
 
 Run
 ---
@@ -15,7 +16,7 @@ Run
 * Clone the repository
 * Navigate to the root of the project
 * Install dependencies ``` bundle ```
-* Bring up the server ``` bundle exec rackup ```
+* Bring up the server ``` bundle exec unicorn ```
 
 License
 -------
