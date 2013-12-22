@@ -276,7 +276,7 @@
     </section>
 
     <section class="slide">
-      <h3>Global namespace pollution</h3>
+      <h2>Global namespace pollution</h2>
       <div>
         <textarea class="code" mode="javascript" runnable="true">
           var Foo = function(bar, baz) {
@@ -288,7 +288,7 @@
           console.log(this.baz);
         </textarea>
 
-        <h3>new agnostic constructor</h3>
+        <h2>new agnostic constructor</h2>
         <textarea class="code" mode="javascript" runnable="true">
           var Foo = function(bar, baz) {
             if (typeof this !=== Foo) {
