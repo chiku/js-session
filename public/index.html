@@ -262,7 +262,26 @@
 
     <section class="slide">
       <h2>Use ECMAScript 5 strict mode</h2>
-      <div><textarea class="code" mode="javascript">"use strict;"</textarea></div>
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          try {
+            a = 10;
+          } catch(ex) {
+            console.log(ex.toString());
+          }
+        </textarea>
+      </div>
+      <div class="slide">
+        <h3>Versus</h3>
+        <textarea class="code" mode="javascript" runnable="true">
+          "use strict";
+          try {
+            a = 10;
+          } catch(ex) {
+            console.log(ex.toString());
+          }
+        </textarea>
+      </div>
     </section>
 
     <section class="slide">
