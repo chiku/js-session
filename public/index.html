@@ -139,7 +139,7 @@
       <div>
         <textarea class="code" mode="javascript" runnable="true">
           var x = 1.2;
-          x.foo = "bar"
+          x.foo = "bar";
           console.log(x.foo);
         </textarea>
       </div>
@@ -333,14 +333,14 @@
         <textarea class="code" mode="javascript" runnable="true">
           if (!Object.create) {
             Object.create = (function(){
-              function F(){}
+              function F() {}
 
               return function(o){
                 if (arguments.length != 1) {
                     throw new Error("Object.create implementation only accepts one parameter.");
                 }
-                F.prototype = o
-                  return new F();
+                F.prototype = o;
+                return new F();
               }
             }());
           }
