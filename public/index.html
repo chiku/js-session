@@ -302,9 +302,9 @@
             this.bar = bar;
             this.baz = baz;
           };
-          var f = Foo(); // forgot to put new
-          console.log(this.bar);
-          console.log(this.baz);
+          var f = Foo("bar", "baz"); // forgot to prefix new
+          console.log(f.bar);
+          console.log(f.baz);
         </textarea>
       </div>
 
@@ -318,9 +318,9 @@
             this.bar = bar;
             this.baz = baz;
           };
-          var f = Foo();
-          console.log(this.bar);
-          console.log(this.baz);
+          var f = Foo("bar", "baz");
+          console.log(f.bar);
+          console.log(f.baz);
         </textarea>
       </div>
     </section>
