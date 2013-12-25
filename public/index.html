@@ -307,7 +307,7 @@
     <section class="slide">
       <h2>Prototype inheritance</h2>
       <h3>prototype</h3>
-      <h3>__proto__</h3>
+      <h3>Object.getPrototypeOf / __proto__</h3>
       <h3>Object.create()</h3>
       <div>
         <textarea class="code" mode="javascript" runnable="true">
@@ -315,13 +315,13 @@
           var b = Object.create(a);
           var c = Object.create(a);
           var d = Object.create(b);
-          console.log(b.__proto__ === a);
-          console.log(c.__proto__ === a);
-          console.log(d.__proto__ === b);
-          console.log(d.__proto__ === c);
-          console.log(a.__proto__ === Object.prototype);
-          console.log(c.__proto__ === Object.prototype);
-          console.log([].__proto__ === Array.prototype);
+          console.log(Object.getPrototypeOf(b) === a);
+          console.log(Object.getPrototypeOf(c) === a);
+          console.log(Object.getPrototypeOf(d) === b);
+          console.log(Object.getPrototypeOf(d) === c);
+          console.log(Object.getPrototypeOf(a) === Object.prototype);
+          console.log(Object.getPrototypeOf(c) === Object.prototype);
+          console.log(Object.getPrototypeOf([]) === Array.prototype);
         </textarea>
       </div>
     </section>
