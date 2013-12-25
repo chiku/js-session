@@ -310,7 +310,7 @@
         <h2>new agnostic constructor</h2>
         <textarea class="code" mode="javascript" runnable="true">
           var Foo = function(bar, baz) {
-            if (typeof this !=== Foo) {
+            if (!(this instanceof Foo)) {
               return new Foo(bar, baz);
             }
             this.bar = bar;
