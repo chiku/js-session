@@ -552,11 +552,47 @@
     </section>
 
     <section class="slide">
-      <h1>Closure</h1>
+      <h2>Closure</h2>
+
+      <div>
+        <textarea class="code" mode="javascript" runnable="true">
+          var addInteger = function(n) {
+            return function (x) {
+              return n + x;
+            }
+          };
+
+          var addTwo = addInteger(2);
+          var addTen = addInteger(10);
+          console.log(addTwo(2), addTwo(-2));
+          console.log(addTen(2), addTen(-2));
+        </textarea>
+      </div>
     </section>
 
     <section class="slide">
-      <h1>Module pattern</h1>
+      <h2>Module pattern</h2>
+
+      <textarea class="code" mode="javascript" runnable="true">
+        var colours = function(rgb) {
+          var darkenColour = function(colour) {
+              return colour * 0.9;
+            },
+            darkenedRed = darkenColour(rgb.red),
+            darkenedBlue = darkenColour(rgb.blue),
+            darkenedGreen = darkenColour(rgb.green);
+
+          return {
+            dark: {
+              red: darkenedRed,
+              blue: darkenedBlue,
+              green: darkenedGreen
+            }
+          };
+        };
+
+        console.log(colours({red: 100, blue: 150, green: 200}).dark);
+      </textarea>
     </section>
 
     <section class="slide">
