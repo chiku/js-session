@@ -379,7 +379,9 @@
         <div>
           <textarea class="code" mode="javascript" runnable="true">
             var sum = function (basket){
-              if (this === window) { console.log("this binds to global object"); }
+              if (this === window) {
+                console.log("this binds to global object");
+              }
               var length = basket.length, sum=0, i;
               for(i = 0; i < length; i += 1) {
                 sum += basket[i].price;
@@ -402,9 +404,13 @@
         <textarea class="code" mode="javascript" runnable="true">
           var basket = {
             items: [],
-            init: function(items) { this.items = items; },
+            init: function(items) {
+              this.items = items;
+            },
             sum: function () {
-              if (this === window) { console.log("this binds to global object"); }
+              if (this === window) {
+                console.log("this binds to global object");
+              }
               console.log("this =>", this);
               var i, length = this.items.length, sum=0;
               for(i = 0; i < length; i += 1) {
