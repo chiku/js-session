@@ -151,7 +151,7 @@
         <textarea class="code" mode="javascript" runnable="true">
           var array = [10, 20, 30, 40, 50];
           var i, sum = 0;
-          for (i = 0; i < array.length; i += 1) {
+          for (i = 0; i &lt; array.length; i += 1) {
               sum += array[i];
           }
           console.log(sum);
@@ -176,7 +176,7 @@
           var array = [10, 20, 30, 40, 50];
           // cache array.length - Useful if array is a DOM collection
           var len = array.length, i, sum = 0;
-          for (i = 0; i < len; i += 1) {
+          for (i = 0; i &lt; len; i += 1) {
               sum += array[i];
           }
           console.log(sum);
@@ -383,7 +383,7 @@
                 console.log("this binds to global object");
               }
               var length = basket.length, sum=0, i;
-              for(i = 0; i < length; i += 1) {
+              for(i = 0; i &lt; length; i += 1) {
                 sum += basket[i].price;
               }
               return sum;
@@ -413,7 +413,7 @@
               }
               console.log("this =>", this);
               var i, length = this.items.length, sum=0;
-              for(i = 0; i < length; i += 1) {
+              for(i = 0; i &lt; length; i += 1) {
                 sum += this.items[i].price;
               }
               return sum;
@@ -440,7 +440,7 @@
               console.log("this =>", this);
               console.log("property => ", property);
               var i, length = this.length, sum=0;
-              for(i = 0; i < length; i += 1) {
+              for(i = 0; i &lt; length; i += 1) {
                 sum += this[i].price;
               }
               return sum;
@@ -466,13 +466,13 @@
           var Basket = function(items, property) {
             this.items = items;
             this.property = property;
-          }
+          };
           Basket.prototype.sum = function () {
             var length = this.items.length,
                 property = this.property,
                 sum=0,
                 i;
-            for(i = 0; i < length; i += 1) {
+            for(i = 0; i &lt; length; i += 1) {
               sum += this.items[i][property];
             }
             return sum;
@@ -494,13 +494,13 @@
         <textarea class="code" mode="javascript" runnable="true">
           fasterThan = function (animal, otherAnimals) {
             var fastestAmongOthers = otherAnimals[0];
-            for(var i = 0; i < otherAnimals.length; i += 1) {
+            for(var i = 0; i &lt; otherAnimals.length; i += 1) {
               var animal = otherAnimals[i];
-              if (animal.speed > fastestAmongOthers.speed) {
+              if (animal.speed &gt; fastestAmongOthers.speed) {
                 fastestAmongOthers = animal;
               }
             }
-            return animal.speed > fastestAmongOthers.speed;
+            return animal.speed &gt; fastestAmongOthers.speed;
           };
           var animals = [
             {name: "elephant", speed: 50},
@@ -520,13 +520,13 @@
             var fastestAmongOthers = otherAnimals[0],
                 anAnimal,
                 i;
-            for(i = 0; i < otherAnimals.length; i += 1) {
+            for(i = 0; i &lt; otherAnimals.length; i += 1) {
               anAnimal = otherAnimals[i];
-              if (anAnimal.speed > fastestAmongOthers.speed) {
+              if (anAnimal.speed &gt; fastestAmongOthers.speed) {
                 fastestAmongOthers = anAnimal;
               }
             }
-            return animal.speed > fastestAmongOthers.speed;
+            return animal.speed &gt; fastestAmongOthers.speed;
           };
           var animals = [
             {name: "elephant", speed: 50},
