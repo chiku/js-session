@@ -1,7 +1,7 @@
 Overview
 --------
 
-Slides from sessions on JavaScript
+Slides from sessions on JavaScript. This session is hosted at https://js-session.herokuapp.com/
 
 Dependencies
 ------------
