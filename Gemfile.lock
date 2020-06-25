@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     kgio (2.11.3)
-    rack (2.1.1)
+    rack (2.1.4)
     raindrops (0.19.1)
     unicorn (5.5.2)
       kgio (~> 2.6)
