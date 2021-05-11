@@ -6,17 +6,15 @@ Slides from sessions on JavaScript. This session is hosted at https://js-session
 Dependencies
 ------------
 
-* `ruby`
-* `rack`
-* `unicorn`
+* `Docker`
 
 Run
 ---
 
 * Clone the repository
-* Navigate to the root of the project
-* Install dependencies `bundle`
-* Bring up the server `bundle exec unicorn`
+* Build docker container `docker build -t js-session .`
+* Bring up the server `docker run -p 8080:80 js-session`
+* Open [http://localhost:8080] in a browser
 
 License
 -------
